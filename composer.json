@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "php": "^5.3|^7",
+        "php": ">=8.2",
         "symfony/property-access": "^2.3|^3.0",
         "symfony/expression-language": "^2.3|^3.0"
     },
