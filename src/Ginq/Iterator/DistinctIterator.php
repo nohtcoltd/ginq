@@ -61,17 +61,17 @@ class DistinctIterator implements \Iterator
         $this->eqComparer = $eqComparer;
     }
 
-    public function current()
+    public function current(): mixed
     {
         return $this->v;
     }
 
-    public function key()
+    public function key(): mixed
     {
         return $this->k;
     }
 
-    public function next()
+    public function next(): void
     {
         while (true) {
             $this->it->next();
@@ -85,7 +85,7 @@ class DistinctIterator implements \Iterator
         }
     }
 
-    public function rewind()
+    public function rewind(): void
     {
         $this->it->rewind();
         if ($this->it->valid()) {
@@ -94,7 +94,7 @@ class DistinctIterator implements \Iterator
         }
     }
 
-    public function valid()
+    public function valid(): bool
     {
         return $this->it->valid();
     }

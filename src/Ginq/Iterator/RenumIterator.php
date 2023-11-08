@@ -42,29 +42,29 @@ class RenumIterator implements \Iterator
         $this->it = IteratorUtil::iterator($xs);
     }
 
-    public function current()
+    public function current(): mixed
     {
         return $this->it->current();
     }
 
-    public function key() 
+    public function key(): mixed 
     {
         return $this->i;
     }
 
-    public function next()
+    public function next(): void
     {
         $this->i++;
         $this->it->next();
     }
 
-    public function rewind()
+    public function rewind(): void
     {
         $this->i = 0;
         $this->it->rewind();
     }
 
-    public function valid()
+    public function valid(): bool
     {
         return $this->it->valid();
     }

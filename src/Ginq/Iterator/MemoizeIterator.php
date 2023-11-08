@@ -52,17 +52,17 @@ class MemoizeIterator implements \Iterator
         $this->cacheSize = 0;
     }
 
-    public function current()
+    public function current(): mixed
     {
         return $this->cache[$this->i][1];
     }
 
-    public function key()
+    public function key(): mixed
     {
         return $this->cache[$this->i][0];
     }
 
-    public function next()
+    public function next(): void
     {
         $this->i++;
         if ($this->cacheSize == $this->i) {
@@ -71,12 +71,12 @@ class MemoizeIterator implements \Iterator
         }
     }
 
-    public function valid()
+    public function valid(): bool
     {
         return ($this->i < $this->cacheSize);
     }
 
-    public function rewind()
+    public function rewind(): void
     {
         $this->i = 0;
         if (!$this->rewinded) {

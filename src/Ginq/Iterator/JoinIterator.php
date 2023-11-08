@@ -90,27 +90,27 @@ class JoinIterator implements \Iterator
         $this->eqComparer = $eqComparer;
     }
 
-    public function current()
+    public function current(): mixed
     {
         return $this->it->current();
     }
 
-    public function next()
+    public function next(): void
     {
         $this->it->next();
     }
 
-    public function key()
+    public function key(): mixed
     {
         return $this->it->key();
     }
 
-    public function valid()
+    public function valid(): bool
     {
         return $this->it->valid();
     }
 
-    public function rewind()
+    public function rewind(): void
     {
         $outerKeySelector = $this->outerKeySelector;
         $lookup = Ginq::from($this->inner)

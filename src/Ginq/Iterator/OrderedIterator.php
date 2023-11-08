@@ -66,7 +66,7 @@ class OrderedIterator implements \Iterator
         $this->comparer = $comparer;
     }
 
-    public function rewind()
+    public function rewind(): void
     {
         $comparer = $this->comparer;
         $sorted = array();
@@ -88,22 +88,22 @@ class OrderedIterator implements \Iterator
         $this->fetch();
     }
 
-    public function current()
+    public function current(): mixed
     {
         return $this->v;
     }
 
-    public function key()
+    public function key(): mixed
     {
         return $this->k;
     }
 
-    public function valid()
+    public function valid(): bool
     {
         return $this->i < $this->len;
     }
 
-    public function next()
+    public function next(): void
     {
         $this->i++;
         $this->fetch();

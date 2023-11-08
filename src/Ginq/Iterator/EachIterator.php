@@ -50,28 +50,28 @@ class EachIterator implements \Iterator
         $this->fn = $fn;
     }
 
-    public function current()
+    public function current(): mixed
     {
         return $this->v;
     }
 
-    public function next()
+    public function next(): void
     {
         $this->it->next();
         $this->fetch();
     }
 
-    public function key()
+    public function key(): mixed
     {
         return $this->k;
     }
 
-    public function valid()
+    public function valid(): bool
     {
         return $this->it->valid();
     }
 
-    public function rewind()
+    public function rewind(): void
     {
         $this->it->rewind();
         $this->fetch();

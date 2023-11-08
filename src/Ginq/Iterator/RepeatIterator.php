@@ -47,27 +47,27 @@ class RepeatIterator implements \Iterator
         $this->count = $count;
     }
 
-    public function current()
+    public function current(): mixed
     {
         return $this->x;
     }
 
-    public function key() 
+    public function key(): mixed 
     {
         return $this->i;
     }
 
-    public function next()
+    public function next(): void
     {
         $this->i++;
     }
 
-    public function rewind()
+    public function rewind(): void
     {
         $this->i = 0;
     }
 
-    public function valid()
+    public function valid(): bool
     {
         if (is_null($this->count)) {
             return true;

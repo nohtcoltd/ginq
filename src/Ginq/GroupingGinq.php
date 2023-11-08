@@ -35,7 +35,7 @@ class GroupingGinq extends Ginq
         parent::__construct($it);
     }
 
-    public function key()
+    public function key(): mixed
     {
         return $this->key;
     }

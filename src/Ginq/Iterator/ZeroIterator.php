@@ -22,25 +22,25 @@ namespace Ginq\Iterator;
  */
 class ZeroIterator implements \Iterator
 {
-    public function current()
+    public function current(): mixed
     {
         return null;
     }
 
-    public function key() 
+    public function key(): mixed 
     {
         return null;
     }
 
-    public function next()
+    public function next(): void
     {
     }
 
-    public function rewind()
+    public function rewind(): void
     {
     }
 
-    public function valid()
+    public function valid(): bool
     {
         return false;
     }

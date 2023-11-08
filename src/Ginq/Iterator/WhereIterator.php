@@ -50,12 +50,12 @@ class WhereIterator implements \Iterator
         $this->predicate = $predicate;
     }
 
-    public function current()
+    public function current(): mixed
     {
         return $this->it->current();
     }
 
-    public function key() 
+    public function key(): mixed 
     {
         return $this->it->key();
     }
@@ -72,21 +72,21 @@ class WhereIterator implements \Iterator
         }
     }
 
-    public function next()
+    public function next(): void
     {
         $this->it->next();
         $this->i++;
         $this->nextSatisfied();
     }
 
-    public function rewind()
+    public function rewind(): void
     {
         $this->i = 0;
         $this->it->rewind();
         $this->nextSatisfied();
     }
 
-    public function valid()
+    public function valid(): bool
     {
         return $this->it->valid();
     }

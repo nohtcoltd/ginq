@@ -70,24 +70,24 @@ class SelectManyIterator implements \Iterator
         $this->manySelector = $manySelector;
     }
 
-    public function current()
+    public function current(): mixed
     {
         return $this->v;
     }
 
-    public function key()
+    public function key(): mixed
     {
         return $this->k;
     }
 
-    public function next()
+    public function next(): void
     {
         $this->inner->next();
         $this->skipEmpty();
         $this->fetchInner();
     }
 
-    public function rewind()
+    public function rewind(): void
     {
         $this->outer->rewind();
         $this->fetchOuter();
@@ -95,7 +95,7 @@ class SelectManyIterator implements \Iterator
         $this->fetchInner();
     }
 
-    public function valid()
+    public function valid(): bool
     {
         return !is_null($this->inner) && $this->inner->valid();
     }

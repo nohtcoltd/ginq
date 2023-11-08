@@ -42,29 +42,29 @@ class LazySourceIterator implements \Iterator
         $this->sourceFactory = $sourceFactory;
     }
 
-    public function current()
+    public function current(): mixed
     {
         return $this->it->current();
     }
 
-    public function key()
+    public function key(): mixed
     {
         return $this->it->key();
     }
 
-    public function next()
+    public function next(): void
     {
         $this->it->next();
     }
 
-    public function rewind()
+    public function rewind(): void
     {
         $f = $this->sourceFactory;
         $this->it = IteratorUtil::iterator($f());
         $this->it->rewind();
     }
 
-    public function valid()
+    public function valid(): bool
     {
         return $this->it->valid();
     }

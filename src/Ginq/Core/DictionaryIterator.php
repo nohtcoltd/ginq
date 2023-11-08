@@ -42,30 +42,30 @@ class DictionaryIterator implements \Iterator
         $this->it = new \ArrayIterator($this->dict->keys());
     }
 
-    public function rewind()
+    public function rewind(): void
     {
         $this->i = 0;
         $this->it->rewind();
     }
 
-    public function valid()
+    public function valid(): bool
     {
         return $this->it->valid();
     }
 
-    public function key()
+    public function key(): mixed
     {
         return $this->i;
     }
 
-    public function current()
+    public function current(): mixed
     {
         $k = $this->it->current();
         $v = $this->dict->get($k);
         return new KeyValuePair($k, $v);
     }
 
-    public function next()
+    public function next(): void
     {
         $this->i++;
         $this->it->next();

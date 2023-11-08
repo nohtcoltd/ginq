@@ -47,22 +47,22 @@ class ReverseIterator implements \Iterator
         $this->it = IteratorUtil::iterator($xs);
     }
 
-    public function current()
+    public function current(): mixed
     {
         return $this->items[$this->i][1];
     }
 
-    public function key() 
+    public function key(): mixed 
     {
         return $this->items[$this->i][0];
     }
 
-    public function next()
+    public function next(): void
     {
         $this->i--;
     }
 
-    public function rewind()
+    public function rewind(): void
     {
         $this->i = 0;
         $this->it->rewind();
@@ -75,7 +75,7 @@ class ReverseIterator implements \Iterator
         $this->i = $len - 1;
     }
 
-    public function valid()
+    public function valid(): bool
     {
         return 0 <= $this->i;
     }

@@ -60,28 +60,28 @@ class UnfoldIterator implements \Iterator
         $this->gen  = $generator;
     }
 
-    public function current()
+    public function current(): mixed
     {
         return $this->v;
     }
 
-    public function next()
+    public function next(): void
     {
         $this->i++;
         $this->fetch();
     }
 
-    public function key()
+    public function key(): mixed
     {
         return $this->i;
     }
 
-    public function valid()
+    public function valid(): bool
     {
         return !empty($this->x);
     }
 
-    public function rewind()
+    public function rewind(): void
     {
         $this->i = 0;
         $this->seed = $this->seed0;

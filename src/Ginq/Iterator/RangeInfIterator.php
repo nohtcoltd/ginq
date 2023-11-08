@@ -52,29 +52,29 @@ class RangeInfIterator implements \Iterator
         $this->step  = $step;
     }
 
-    public function current()
+    public function current(): mixed
     {
         return $this->x;
     }
 
-    public function key() 
+    public function key(): mixed 
     {
         return $this->i;
     }
 
-    public function next()
+    public function next(): void
     {
         $this->i++;
         $this->x += $this->step;
     }
 
-    public function rewind()
+    public function rewind(): void
     {
         $this->i = 0;
         $this->x = $this->start;
     }
 
-    public function valid()
+    public function valid(): bool
     {
         return true;
     }

@@ -57,7 +57,7 @@ class BufferIterator implements \Iterator
         $this->chunkSize = $chunkSize;
     }
 
-    public function rewind()
+    public function rewind(): void
     {
         $this->it->rewind();
         $this->buffer = array();
@@ -65,22 +65,22 @@ class BufferIterator implements \Iterator
         $this->fetch();
     }
 
-    public function valid()
+    public function valid(): bool
     {
         return !empty($this->buffer);
     }
 
-    public function key()
+    public function key(): mixed
     {
         return $this->i;
     }
 
-    public function current()
+    public function current(): mixed
     {
         return $this->buffer;
     }
 
-    public function next()
+    public function next(): void
     {
         $this->fetch();
         $this->i++;
